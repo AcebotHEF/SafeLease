@@ -1,8 +1,8 @@
-import {createFileRoute, Link} from '@tanstack/react-router'
-import {useState} from 'react'
-import {authClient} from '../lib/auth-client'
-import {z} from 'zod'
-import {User, Home, Eye, EyeOff, ArrowRight, Shield} from 'lucide-react'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { useState } from 'react'
+import { authClient } from '../lib/auth-client'
+import { z } from 'zod'
+import { User, Home, Eye, EyeOff, ArrowRight, Shield } from 'lucide-react'
 
 const signupSchema = z.object({
     firstName: z.string().min(1, 'First name is required'),
@@ -72,7 +72,7 @@ function SignupPage() {
         <div className="min-h-screen bg-[#f1f9f8] flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-2xl">
                 <div className="flex justify-center items-center gap-2 mb-8">
-                    <Shield className="w-8 h-8 text-slate-700 fill-slate-700/10"/>
+                    <Shield className="w-8 h-8 text-slate-700 fill-slate-700/10" />
                     <span className="text-xl font-bold text-slate-800">SafeLease</span>
                 </div>
 
@@ -98,14 +98,13 @@ function SignupPage() {
                                 <button
                                     type="button"
                                     onClick={() => setRole('student')}
-                                    className={`flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all ${
-                                        role === 'student'
+                                    className={`flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all ${role === 'student'
                                             ? 'border-slate-800 bg-white'
                                             : 'border-slate-50 bg-slate-50 hover:border-slate-200'
-                                    }`}
+                                        }`}
                                 >
                                     <User
-                                        className={`w-8 h-8 mb-3 ${role === 'student' ? 'text-slate-800' : 'text-slate-400'}`}/>
+                                        className={`w-8 h-8 mb-3 ${role === 'student' ? 'text-slate-800' : 'text-slate-400'}`} />
                                     <span
                                         className={`font-bold ${role === 'student' ? 'text-slate-800' : 'text-slate-600'}`}>Student</span>
                                     <span className="text-xs text-slate-400 mt-1">Looking for safe housing</span>
@@ -113,14 +112,13 @@ function SignupPage() {
                                 <button
                                     type="button"
                                     onClick={() => setRole('agent')}
-                                    className={`flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all ${
-                                        role === 'agent'
+                                    className={`flex flex-col items-center justify-center p-6 rounded-xl border-2 transition-all ${role === 'agent'
                                             ? 'border-slate-800 bg-white'
                                             : 'border-slate-50 bg-slate-50 hover:border-slate-200'
-                                    }`}
+                                        }`}
                                 >
                                     <Home
-                                        className={`w-8 h-8 mb-3 ${role === 'agent' ? 'text-slate-800' : 'text-slate-400'}`}/>
+                                        className={`w-8 h-8 mb-3 ${role === 'agent' ? 'text-slate-800' : 'text-slate-400'}`} />
                                     <span
                                         className={`font-bold ${role === 'agent' ? 'text-slate-800' : 'text-slate-600'}`}>Agent</span>
                                     <span className="text-xs text-slate-400 mt-1">Managing secure listings</span>
@@ -199,9 +197,9 @@ function SignupPage() {
                                     className="absolute inset-y-0 right-0 pr-4 flex items-center"
                                 >
                                     {showPassword ? (
-                                        <EyeOff className="h-5 w-5 text-slate-400"/>
+                                        <EyeOff className="h-5 w-5 text-slate-400" />
                                     ) : (
-                                        <Eye className="h-5 w-5 text-slate-400"/>
+                                        <Eye className="h-5 w-5 text-slate-400" />
                                     )}
                                 </button>
                             </div>
@@ -214,8 +212,8 @@ function SignupPage() {
                             disabled={loading}
                             className="w-full flex justify-center items-center py-5 px-4 border border-transparent rounded-xl shadow-lg text-base font-bold text-white bg-[#535c75] hover:bg-[#434b5f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50"
                         >
-                            {loading ? 'Creating account...' : 'Create Secure Account'}
-                            <ArrowRight className="ml-2 w-5 h-5"/>
+                            {loading ? 'Creating account...' : 'Get Started'}
+                            <ArrowRight className="ml-2 w-5 h-5" />
                         </button>
                     </form>
                 </div>
@@ -223,7 +221,7 @@ function SignupPage() {
                 <div className="text-center mb-16">
                     <p className="text-sm text-slate-500">
                         Already have an account? <Link to="/login" className="font-bold text-slate-800 hover:underline">Log
-                        in here</Link>
+                            in here</Link>
                     </p>
                 </div>
             </div>

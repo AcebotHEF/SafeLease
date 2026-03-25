@@ -1,8 +1,8 @@
-import {createFileRoute, Link} from '@tanstack/react-router'
-import {useState} from 'react'
-import {authClient} from '../lib/auth-client'
-import {z} from 'zod'
-import {Shield, Mail, Lock, ArrowRight} from 'lucide-react'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { useState } from 'react'
+import { authClient } from '../lib/auth-client'
+import { z } from 'zod'
+import { Shield, Mail, Lock, ArrowRight } from 'lucide-react'
 
 const loginSchema = z.object({
     email: z.string().email('Invalid email address'),
@@ -26,7 +26,7 @@ function LoginPage() {
         setError('')
         setErrors({})
 
-        const validation = loginSchema.safeParse({email, password})
+        const validation = loginSchema.safeParse({ email, password })
         if (!validation.success) {
             const fieldErrors: Record<string, string> = {}
             for (const err of validation.error.issues) {
@@ -56,7 +56,7 @@ function LoginPage() {
         <div className="min-h-screen bg-[#f1f9f8] flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-2xl">
                 <div className="flex justify-center items-center gap-2 mb-8">
-                    <Shield className="w-8 h-8 text-slate-700 fill-slate-700/10"/>
+                    <Shield className="w-8 h-8 text-slate-700 fill-slate-700/10" />
                     <span className="text-xl font-bold text-slate-800">SafeLease</span>
                 </div>
 
@@ -81,7 +81,7 @@ function LoginPage() {
                             <div className="relative">
                                 <div
                                     className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <Mail className="h-5 w-5 text-slate-400"/>
+                                    <Mail className="h-5 w-5 text-slate-400" />
                                 </div>
                                 <input
                                     type="email"
@@ -103,14 +103,14 @@ function LoginPage() {
                                     PASSWORD
                                 </label>
                                 <a href="#"
-                                   className="text-xs font-semibold text-slate-500 hover:text-slate-700 transition-colors">
+                                    className="text-xs font-semibold text-slate-500 hover:text-slate-700 transition-colors">
                                     Forgot Password?
                                 </a>
                             </div>
                             <div className="relative">
                                 <div
                                     className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                    <Lock className="h-5 w-5 text-slate-400"/>
+                                    <Lock className="h-5 w-5 text-slate-400" />
                                 </div>
                                 <input
                                     type="password"
@@ -130,8 +130,8 @@ function LoginPage() {
                             disabled={loading}
                             className="w-full flex justify-center items-center py-5 px-4 border border-transparent rounded-xl shadow-lg text-base font-bold text-white bg-[#535c75] hover:bg-[#434b5f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50"
                         >
-                            {loading ? 'Signing in...' : 'Sign In to Secure Portal'}
-                            <ArrowRight className="ml-2 w-5 h-5"/>
+                            {loading ? 'Signing in...' : 'Sign In'}
+                            <ArrowRight className="ml-2 w-5 h-5" />
                         </button>
                     </form>
                 </div>
@@ -139,8 +139,8 @@ function LoginPage() {
                 <div className="text-center mb-16">
                     <p className="text-sm text-slate-500">
                         New to SafeLease? <Link to="/signup"
-                                                className="font-bold text-slate-800 hover:underline">Create
-                        an Account</Link>
+                            className="font-bold text-slate-800 hover:underline">Create
+                            an Account</Link>
                     </p>
                 </div>
             </div>
