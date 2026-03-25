@@ -7,11 +7,24 @@ export const auth = betterAuth({
     emailAndPassword: {
         enabled: true,
     },
+    // socialProviders: {
+    //     google: {
+    //         clientId: "YOUR_GOOGLE_CLIENT_ID",
+    //         clientSecret: "YOUR_GOOGLE_CLIENT_SECRET",
+    //         mapProfileToUser: (profile) => {
+    //             return {
+    //                 firstName: profile.given_name,
+    //                 lastName: profile.family_name,
+    //             };
+    //         },
+    //     },
+    // },
     user: {
         additionalFields: {
             role: {
-                type: 'string',
-                required: false,
+                type: ["student", "agent"],
+                required: true,
+                defaultValue: "student"
             },
         },
     },
