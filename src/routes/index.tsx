@@ -1,15 +1,24 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
+import { Navbar } from '../components/LandingPage/Navbar'
+import { HeroSection } from '../components/LandingPage/HeroSection'
+import { DesktopListings } from '../components/LandingPage/DesktopListings'
+import { MobileListings } from '../components/LandingPage/MobileListings'
+import { SecurityProtocol } from '../components/LandingPage/SecurityProtocol'
+import { SplitCtaSection } from '../components/LandingPage/SplitCtaSection'
+import { Footer } from '../components/LandingPage/Footer'
 
-export const Route = createFileRoute('/')({ component: App })
+export const Route = createFileRoute('/')({ component: LandingPage })
 
-function App() {
+function LandingPage() {
   return (
-    <main className="page-wrap px-4 pb-8 pt-14 flex flex-col items-center gap-6">
-      <h1 className="text-4xl font-bold">SafeLease</h1>
-      <div className="flex gap-4">
-        <Link to="/login" className="px-4 py-2 bg-slate-800 text-white rounded-lg">Login</Link>
-        <Link to="/signup" className="px-4 py-2 bg-slate-100 text-slate-800 rounded-lg border border-slate-200">Sign Up</Link>
-      </div>
-    </main>
+    <div className="min-h-screen bg-[#f8fafc] md:bg-white flex flex-col font-sans selection:bg-teal-200 selection:text-teal-900">
+      <Navbar />
+      <HeroSection />
+      <DesktopListings />
+      <MobileListings />
+      <SecurityProtocol />
+      <SplitCtaSection />
+      <Footer />
+    </div>
   )
 }
