@@ -59,7 +59,7 @@ function SignupPage() {
                 name: `${firstName} ${lastName}`,
                 role,
                 callbackURL: '/',
-            })
+            });
         } catch (err: any) {
             setError(err.message || 'Failed to create account')
         } finally {
