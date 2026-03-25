@@ -74,11 +74,6 @@ function SignupPage() {
                     <div className="flex items-center gap-2">
                         <span className="text-xl font-bold text-slate-800">SafeLease</span>
                     </div>
-                    <div className="flex items-center gap-4">
-                        <Link to="/login"
-                              className="text-sm font-medium text-slate-600 hover:text-slate-900">Login</Link>
-                        <HelpCircleIcon className="w-5 h-5 text-slate-400"/>
-                    </div>
                 </div>
 
                 <div className="text-center mb-10">
@@ -222,11 +217,6 @@ function SignupPage() {
                             {loading ? 'Creating account...' : 'Create Secure Account'}
                             <ArrowRightIcon className="ml-2 w-5 h-5"/>
                         </button>
-
-                        <p className="text-center text-[11px] text-slate-400 leading-relaxed">
-                            By signing up, you agree to our <a href="#" className="underline">Terms of Escrow</a> and <a
-                            href="#" className="underline">Privacy Shield</a>.
-                        </p>
                     </form>
                 </div>
 
@@ -235,20 +225,6 @@ function SignupPage() {
                         Already have an account? <Link to="/login" className="font-bold text-slate-800 hover:underline">Log
                         in here</Link>
                     </p>
-                </div>
-
-                <div
-                    className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-                    <div
-                        className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                        <ShieldCheckIcon className="w-4 h-4"/>
-                        <span>Bank-level security protocol</span>
-                    </div>
-                    <div className="flex gap-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                        <a href="#" className="hover:text-slate-600 transition-colors">Help Center</a>
-                        <a href="#" className="hover:text-slate-600 transition-colors">Transparency Report</a>
-                        <a href="#" className="hover:text-slate-600 transition-colors">Contact Support</a>
-                    </div>
                 </div>
             </div>
         </div>
