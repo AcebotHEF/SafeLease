@@ -2,6 +2,7 @@ import {createFileRoute, Link} from '@tanstack/react-router'
 import {useState} from 'react'
 import {authClient} from '../lib/auth-client'
 import {z} from 'zod'
+import {User, Home, Eye, EyeOff, ArrowRight, Shield} from 'lucide-react'
 
 const signupSchema = z.object({
     firstName: z.string().min(1, 'First name is required'),
@@ -70,10 +71,9 @@ function SignupPage() {
     return (
         <div className="min-h-screen bg-[#f1f9f8] flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-2xl">
-                <div className="flex justify-between items-center mb-12">
-                    <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold text-slate-800">SafeLease</span>
-                    </div>
+                <div className="flex justify-center items-center gap-2 mb-8">
+                    <Shield className="w-8 h-8 text-slate-700 fill-slate-700/10"/>
+                    <span className="text-xl font-bold text-slate-800">SafeLease</span>
                 </div>
 
                 <div className="text-center mb-10">
@@ -104,7 +104,7 @@ function SignupPage() {
                                             : 'border-slate-50 bg-slate-50 hover:border-slate-200'
                                     }`}
                                 >
-                                    <UserIcon
+                                    <User
                                         className={`w-8 h-8 mb-3 ${role === 'student' ? 'text-slate-800' : 'text-slate-400'}`}/>
                                     <span
                                         className={`font-bold ${role === 'student' ? 'text-slate-800' : 'text-slate-600'}`}>Student</span>
@@ -119,7 +119,7 @@ function SignupPage() {
                                             : 'border-slate-50 bg-slate-50 hover:border-slate-200'
                                     }`}
                                 >
-                                    <HomeIcon
+                                    <Home
                                         className={`w-8 h-8 mb-3 ${role === 'agent' ? 'text-slate-800' : 'text-slate-400'}`}/>
                                     <span
                                         className={`font-bold ${role === 'agent' ? 'text-slate-800' : 'text-slate-600'}`}>Agent</span>
@@ -199,9 +199,9 @@ function SignupPage() {
                                     className="absolute inset-y-0 right-0 pr-4 flex items-center"
                                 >
                                     {showPassword ? (
-                                        <EyeOffIcon className="h-5 w-5 text-slate-400"/>
+                                        <EyeOff className="h-5 w-5 text-slate-400"/>
                                     ) : (
-                                        <EyeIcon className="h-5 w-5 text-slate-400"/>
+                                        <Eye className="h-5 w-5 text-slate-400"/>
                                     )}
                                 </button>
                             </div>
@@ -215,7 +215,7 @@ function SignupPage() {
                             className="w-full flex justify-center items-center py-5 px-4 border border-transparent rounded-xl shadow-lg text-base font-bold text-white bg-[#535c75] hover:bg-[#434b5f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50"
                         >
                             {loading ? 'Creating account...' : 'Create Secure Account'}
-                            <ArrowRightIcon className="ml-2 w-5 h-5"/>
+                            <ArrowRight className="ml-2 w-5 h-5"/>
                         </button>
                     </form>
                 </div>
@@ -231,79 +231,3 @@ function SignupPage() {
     )
 }
 
-function HelpCircleIcon(props: React.SVGProps<SVGSVGElement>) {
-    return (
-        <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-            <path d="M12 17h.01"/>
-        </svg>
-    )
-}
-
-function UserIcon(props: React.SVGProps<SVGSVGElement>) {
-    return (
-        <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-        </svg>
-    )
-}
-
-function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
-    return (
-        <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-    )
-}
-
-function EyeIcon(props: React.SVGProps<SVGSVGElement>) {
-    return (
-        <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-            <circle cx="12" cy="12" r="3"/>
-        </svg>
-    )
-}
-
-function EyeOffIcon(props: React.SVGProps<SVGSVGElement>) {
-    return (
-        <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M9.88 9.88 1.5 1.5"/>
-            <path d="M21 21l-8.22-8.22"/>
-            <path d="M2 12s3-7 10-7a9.77 9.77 0 0 1 5 1.45"/>
-            <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
-            <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
-            <path d="M12 19c-7 0-10-7-10-7a13.3 13.3 0 0 1 1.61-2.61"/>
-            <circle cx="12" cy="12" r="3"/>
-        </svg>
-    )
-}
-
-function ArrowRightIcon(props: React.SVGProps<SVGSVGElement>) {
-    return (
-        <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14"/>
-            <path d="m12 5 7 7-7 7"/>
-        </svg>
-    )
-}
-
-function ShieldCheckIcon(props: React.SVGProps<SVGSVGElement>) {
-    return (
-        <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path
-                d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
-            <path d="m9 12 2 2 4-4"/>
-        </svg>
-    )
-}
