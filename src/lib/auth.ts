@@ -7,6 +7,14 @@ export const auth = betterAuth({
     emailAndPassword: {
         enabled: true,
     },
+    user: {
+        additionalFields: {
+            role: {
+                type: 'string',
+                required: false,
+            },
+        },
+    },
     plugins: [tanstackStartCookies()],
     database: prismaAdapter(prisma, {provider: "postgresql"})
 });
