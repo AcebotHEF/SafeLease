@@ -3,12 +3,6 @@ import { Search, Calendar, Users, ShieldCheck, Lock } from 'lucide-react'
 export function HeroSection() {
   return (
     <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 px-4 md:px-8 overflow-hidden flex flex-col items-center text-center">
-      {/* Desktop Background */}
-      <div 
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-[0.05] md:opacity-10 pointer-events-none"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/95 to-[#f8fafc] md:bg-white/60 pointer-events-none backdrop-blur-[2px]" />
-
       <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center md:items-center items-start md:text-center text-left">
         {/* Mobile Header Badges */}
         <div className="hidden md:flex items-center gap-2 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-teal-100 shadow-sm">
@@ -35,7 +29,7 @@ export function HeroSection() {
             className="flex-1 bg-transparent px-4 py-3 outline-none text-slate-700 placeholder:text-slate-400"
           />
           <button className="bg-[#4b5563] hover:bg-[#374151] text-white px-6 py-3 rounded-lg font-semibold tracking-wide text-sm transition-colors uppercase">
-            Search Properties
+            Search
           </button>
         </div>
 
